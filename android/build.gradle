@@ -8,8 +8,9 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:3.2.1'
-    //noinspection DifferentKotlinGradleVersion
+    // classpath 'com.android.tools.build:gradle:3.2.1'
+    classpath 'com.android.tools.build:gradle:2.3.0'
+    // noinspection DifferentKotlinGradleVersion
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
   }
 }
@@ -119,10 +120,13 @@ repositories {
   }
 }
 
+def support_version = getExtOrDefault('supportLibVersion')
 def kotlin_version = getExtOrDefault('kotlinVersion')
 
 dependencies {
-  //noinspection GradleDynamicVersion
-  api 'com.facebook.react:react-native:+'
-  implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  // noinspection GradleDynamicVersion
+  compile 'com.facebook.react:react-native:+'
+  compile 'com.android.support:support-annotations:27.1.1'
+  compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  compileOnly "com.android.support:appcompat-v7:$support_version"
 }

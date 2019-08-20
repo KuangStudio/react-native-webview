@@ -10,9 +10,9 @@ Pod::Spec.new do |s|
 
   s.authors      = package['author']
   s.homepage     = package['homepage']
-  s.platform     = :ios, "9.0"
+  s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/react-native-community/react-native-webview.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/react-native-community/react-native-webview.git" }
   s.source_files  = "ios/**/*.{h,m}"
 
   s.dependency 'React'
